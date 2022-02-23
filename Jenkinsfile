@@ -3,6 +3,18 @@ pipeline {
 
     stages {
         
+        
+        stage('Hello') {
+            
+            steps {
+               sh '''
+                ls -l 
+                '''
+            }
+        }
+        
+        
+        
         stage('Hello') {
             agent { 
             docker 'gradle:7.4.0-jdk17'
