@@ -23,6 +23,7 @@ pipeline {
             steps {
                sh '''
                 gradle clean
+                gradle assemble
                 '''
             }
         }
