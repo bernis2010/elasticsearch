@@ -22,7 +22,7 @@ pipeline {
             
             steps {
                sh '''
-                gradlew :distribution:archives:linux-tar:assemble
+                gradle :distribution:archives:linux-tar:assemble
                 '''
             }
         }
