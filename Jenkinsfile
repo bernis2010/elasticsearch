@@ -2,9 +2,8 @@ pipeline {
     agent any
 
     stages {
- 
         
-        stage('Hello') {
+        stage('clean') {
             agent { 
             docker 'gradle:7.4.0-jdk17'
             }
@@ -12,9 +11,22 @@ pipeline {
             steps {
                sh '''
                 gradle clean
-                gradle assemble
                 '''
             }
         }
+
+       stage('assemble') {
+            agent { 
+            docker 'gradle:7.4.0-jdk17'
+            }
+            
+            steps {
+               sh '''
+                gradlew :distribution:archives:linux-tar:assemble
+                '''
+            }
+        }
+
+
     }
 }
