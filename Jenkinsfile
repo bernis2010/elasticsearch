@@ -10,7 +10,7 @@ pipeline {
             
             steps {
                sh '''
-                gradle clean
+                sh "./gradlew build"
                 '''
             }
         }
