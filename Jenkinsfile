@@ -4,6 +4,7 @@ pipeline {
     stages {
         
         stage('clean') {
+            ls 
             agent { 
             docker {
                     image 'openjdk:11'
