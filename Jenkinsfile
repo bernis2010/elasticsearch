@@ -5,7 +5,7 @@ pipeline {
         
         stage('clean') {
             agent { 
-            docker 'gradle:7.4.0-jdk17'
+            docker 'image 'openjdk:11''
             }
             
             steps {
@@ -17,7 +17,7 @@ pipeline {
 
        stage('assemble') {
             agent { 
-            docker 'gradle:7.4.0-jdk17'
+            docker 'image 'openjdk:11''
             }
             
             steps {
