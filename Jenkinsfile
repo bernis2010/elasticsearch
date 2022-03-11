@@ -5,24 +5,30 @@ pipeline {
         
         stage('clean') {
             agent { 
-            docker 'gradle:7.4.0-jdk17'
+            docker {
+                    image 'openjdk:11'
+                }
+
             }
             
             steps {
                sh '''
-                gradle clean
+                ./gradle clean
                 '''
             }
         }
 
        stage('assemble') {
             agent { 
-            docker 'gradle:7.4.0-jdk17'
+           docker {
+                    image 'openjdk:11'
+                }
+
             }
             
             steps {
                sh '''
-                gradle :distribution:archives:linux-tar:assemble
+                ./gradle :distribution:archives:linux-tar:assemble
                 ls -l
                 '''
             }
