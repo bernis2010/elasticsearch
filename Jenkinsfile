@@ -5,7 +5,9 @@ pipeline {
         
         stage('clean') {
             agent { 
-            docker 'image 'openjdk:11''
+            docker {
+                    image 'openjdk:11'
+                }
             }
             
             steps {
@@ -17,7 +19,9 @@ pipeline {
 
        stage('assemble') {
             agent { 
-            docker 'image 'openjdk:11''
+            docker {
+                    image 'openjdk:11'
+                }
             }
             
             steps {
