@@ -13,7 +13,7 @@ pipeline {
             
             steps {
                sh '''
-                ./gradle clean
+                ./gradlew clean
                 '''
             }
         }
@@ -28,7 +28,7 @@ pipeline {
             
             steps {
                sh '''
-                ./gradle :distribution:archives:linux-tar:assemble
+                ./gradlew :distribution:archives:linux-tar:assemble
                 ls -l
                 '''
             }
